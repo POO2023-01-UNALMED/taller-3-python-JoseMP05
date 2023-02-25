@@ -8,6 +8,7 @@ class TV:
         self._estado = estado
         self._volumen = 1
         self._control = None
+        TV._numTV += 1
 
     # Setters
     def setMarca(self, marca):
@@ -72,7 +73,7 @@ class TV:
 
     def canalDown(self):
         if self.getEstado():
-            if self._canal > 120:
+            if self._canal > 0:
                 self._canal -= 1
 
     def volumenUp(self):
@@ -80,7 +81,7 @@ class TV:
             if self._volumen < 7:
                 self._volumen += 1
 
-    def canalUp(self):
+    def VolumenDown(self):
         if self.getEstado():
-            if self._canal > 0:
-                self._canal -= 1
+            if self._volumen > 0:
+                self._volumen -= 1
